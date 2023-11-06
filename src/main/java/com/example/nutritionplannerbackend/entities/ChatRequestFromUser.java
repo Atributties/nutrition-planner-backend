@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-public class ChatRequest {
+public class ChatRequestFromUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

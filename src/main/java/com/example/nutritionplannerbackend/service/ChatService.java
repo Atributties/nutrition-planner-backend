@@ -1,5 +1,6 @@
 package com.example.nutritionplannerbackend.service;
 
+import com.example.nutritionplannerbackend.entities.ChatRequestFromUser;
 import com.example.nutritionplannerbackend.entities.ChatResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -21,11 +22,13 @@ public class ChatService {
         this.webClient = webClientBuilder.baseUrl("http://localhost:8081").build();
     }
 
-    public Mono<List<ChatResponse>> fetchChatGPT() {
+    public Mono<List<ChatResponse>> fetchChatGPT(ChatRequestFromUser chatRequestFromUser) {
+        System.out.println(chatRequestFromUser.toString());
         return webClient
-                .get()
+                .post()
                 .uri("/chat")
                 .accept(MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML)
+                .bodyValue(chatRequestFromUser) // Send chatRequest as the request body.
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<List<ChatResponse>>() {});
     }
