@@ -28,4 +28,10 @@ public class EnumController {
         List<String> nutritionTypes = enumService.getAllNutritionTypes();
         return new ResponseEntity<>(nutritionTypes, HttpStatus.OK);
     }
+
+    @GetMapping("/activityLevels")
+    public ResponseEntity<List<String>> getAllActivityLevels() {
+        List<String> activityLevels = enumService.getAllActivityLevels();
+        return new ResponseEntity<>(activityLevels, HttpStatus.OK);
+    }
 }
