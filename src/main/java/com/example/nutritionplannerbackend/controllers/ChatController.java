@@ -10,6 +10,7 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/chat")
 public class ChatController {
 
