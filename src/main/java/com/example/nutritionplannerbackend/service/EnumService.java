@@ -12,22 +12,14 @@ import java.util.stream.Collectors;
 @Service
 public class EnumService {
 
-    private final Gender[] genders;
-    private final NutritionType[] nutritionTypes;
-    @Autowired
-    public EnumService(Gender[] genders, NutritionType[] nutritionTypes) {
-        this.genders = genders;
-        this.nutritionTypes = nutritionTypes;
-    }
-
-    public List<String> getAllGenders(){
-        return Arrays.stream(genders)
+    public List<String> getAllGenders() {
+        return Arrays.stream(Gender.values())
                 .map(Enum::name)
                 .collect(Collectors.toList());
     }
 
-    public List<String> getAllNutritionTypes(){
-        return Arrays.stream(nutritionTypes)
+    public List<String> getAllNutritionTypes() {
+        return Arrays.stream(NutritionType.values())
                 .map(Enum::name)
                 .collect(Collectors.toList());
     }
