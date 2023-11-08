@@ -15,7 +15,6 @@ public class ChatRequestFromUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private NutritionType nutritionType;
-    private int numberOfDays;
     @OneToOne
     private UserInformation userInformation;
 

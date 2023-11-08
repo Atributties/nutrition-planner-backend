@@ -18,7 +18,6 @@ public class UserInformation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private Gender gender;
-    private String name;
     private int age;
     private double weight;
     private double height;
